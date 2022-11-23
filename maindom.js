@@ -3,7 +3,7 @@ var favs= Array.from(document.querySelectorAll(".fa-heart"));
 var trash=Array.from(document.querySelectorAll(".fa-trash-alt"));
 var cards=Array.from(document.querySelectorAll(".card"));
 var plusbtn= Array.from(document.querySelectorAll(".fa-plus-circle"));
-var minusbtn=Array.from(document.querySelectorAll(".fa-minus-circle"));
+var minusbtn=Array.from(document.querySelectorAll(".fas fa-minus-circle"));
 
 var coun=Array.from(document.querySelectorAll(".qute"));
 
@@ -31,18 +31,20 @@ for (let i in trash){
 for (let plus of plusbtn){
     plus.addEventListener("click",function(){
         plus.nextElementSibling.innerHTML++;
-        total(); 
+    console.log(count)
+    total(); 
 });} 
 
 
 //minus btn
-let count=0;
+
 for (let moin in minusbtn) {
-    moin.addEventListener("click",function(){
-       coun.innerHTML--;
-        //count--;
-      //  moin.innerHTML=count;
+    moin.addEventListener("click",function() {
+        moin.previousElementSibling.innerHTML > 0
+        ?moin.previousElementSibling.innerHTML--
+        : null;
         total();
+
     });}
 
 //total
